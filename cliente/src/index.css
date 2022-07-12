@@ -198,6 +198,16 @@ body, html {
     transition: all 0.2s ease;
 }
 
+.admin-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.admin-link > svg {
+    margin-left: 5px;
+}
+
 
 /* ENTITY CARD */
 

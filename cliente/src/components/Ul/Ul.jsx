@@ -2,6 +2,26 @@ import styled from 'styled-components';
 
 const Ul = styled.ul`
 
+    ${props => props.admin && (
+        `
+            list-style : none;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+
+            & > li {
+                min-width: fit-content;
+                background-color: rgba(145,158,171,0.12);
+                border-radius: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10%;
+            }
+
+        `
+    )}
+
     ${props => props.nav && (
         `
             list-style : none;

@@ -21,6 +21,16 @@ import EntityRegister from '../views/Admin/EntityRegister'
 
 import NotFound from '../views/App/NotFound'
 
+import AdminProfile from '../modules/AdminProfile/AdminProfile'
+import AdminEntity from '../modules/AdminEntity/AdminEntity'
+import AdminUsers from '../modules/AdminUsers/AdminUsers'
+import AdminEntities from '../modules/AdminEntities/AdminEntities'
+import AdminBusinesses from '../modules/AdminBusinesses/AdminBusinesses'
+import AdminImages from '../modules/AdminImages/AdminImages'
+import AdminNews from '../modules/AdminNews/AdminNews'
+import AdminMessages from '../modules/AdminMessages/AdminMessages'
+
+
 export const mainRoutes = [
     {
         path: '/',
@@ -119,3 +129,14 @@ export const mainRoutes = [
         name: 'Admin'
     }
 ]
+
+export const adminRoutes = {
+    profile: <AdminProfile />,
+    entity: <AdminEntity />,
+    users: <AdminUsers />,
+    entities: <AdminEntities />,
+    businesses: <AdminBusinesses />,
+    images: <AdminImages />,
+    news: <AdminNews />,
+    messages: <AdminMessages />,
+}

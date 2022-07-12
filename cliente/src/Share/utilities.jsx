@@ -25,6 +25,17 @@ export const contactTranslations = {
     'facebook': 'Facebook'
 }
 
+export const adminSectionTranslations = {
+    'profile': 'Tu perfil',
+    'entity': 'Tu entidad',
+    'users': 'Usuarios',
+    'entities': 'Entidades',
+    'businesses': 'Comercios',
+    'images': 'Imágenes',
+    'news': 'Noticias',
+    'messages': 'Mensajes'
+}
+
 export const socialMediaIcons = {
     'email': <FiMail style={{ fontSize: 24 }} />,
     'phone': <FiPhone style={{ fontSize: 24 }} />,

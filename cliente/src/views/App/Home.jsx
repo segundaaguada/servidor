@@ -54,8 +54,6 @@ const Home = () =>{
             countapi.hit('segundaaguada', 'home')
             setPageVisited(dispatch, true)
         }
-        // TODO
-        countapi.get('segundaaguada', 'home').then((result) => console.log('numero de visitas:', result.value));
 
         setContactFooter(dispatch, false)
 

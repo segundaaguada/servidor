@@ -781,6 +781,8 @@ const Div = styled.div`
         }
     }
 
+    // ADMIN
+
     &.div--admin-user {
         min-width: fit-content;
         max-width: 100%;
@@ -799,6 +801,53 @@ const Div = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &.usercard {
+            padding: 1.65em;
+        }
+
+    }
+
+    &.div--visitor-counter {
+        display: flex;
+    }
+
+    &.admin-section--div {
+        margin: 1% 2%;
+    }
+
+    &.div--usercard {
+        width: 20%;
+        padding: 2% 2% 1.2% 2%;
+        border-radius: 1em;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+        margin: 20px 25px;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+
+    }
+
+    &.div--usercard-role {
+        padding: 7px 15px;
+        border-radius: 12px;
+        align-self: flex-end;
+        margin-top: 20px;
+    }
+
+    &.div--admin-users {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
 `

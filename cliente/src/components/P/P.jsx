@@ -138,9 +138,20 @@ const P = styled.p`
         margin: 20px 10px;
     }
 
+    // ADMIN
+
     &.p--profile-name {
         padding-left: 15px;
         font-weight: 500;
+    }
+
+    &.p--usercard-name {
+        font-weight: 600;
+        margin: 13px 0 3px 0;
+    }
+
+    &.p--usercard-entity {
+        font-weight: 300;
     }
 
 `

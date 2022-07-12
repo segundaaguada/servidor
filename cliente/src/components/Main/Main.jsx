@@ -56,7 +56,7 @@ const Main = styled.main`
     @media (max-width: 768px) {
         margin-top: 10%;
 
-        &.auth-main {
+        &.auth-main, &.admin-main {
             margin: 0;
         }
 

@@ -335,6 +335,8 @@ const Section = styled.section`
 
     }
 
+    // ADMIN
+
     &.admin-section {
         width: 81.5%;
     }
