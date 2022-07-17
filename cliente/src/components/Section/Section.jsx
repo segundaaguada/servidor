@@ -339,6 +339,7 @@ const Section = styled.section`
 
     &.admin-section {
         width: 81.5%;
+        margin-left: auto;
     }
 
 `

@@ -7,8 +7,7 @@ const Aside = styled.aside`
     // border-right: 1px dashed ${COLORS.Gray};
     width: 18.5%;
     height: 100vh;
-    // TODO position fixed
-    // position: fixed;
+    position: fixed;
     padding: 20px;
     overflow: scroll;
     display: flex;
