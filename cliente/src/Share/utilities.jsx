@@ -108,3 +108,14 @@ export const carrouselImages = [
         src: '/images/carrusel4-min.jpg'
     },
 ]
+
+export const profilePictureColors = [
+    'blue',
+    'purple',
+    'green',
+    'yellow',
+    'pink',
+    'red',
+    'orange',
+    'cyan'
+]

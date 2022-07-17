@@ -90,6 +90,7 @@ const Admin = () => {
                 setMenuOption={setMenuOption}
             />
             <AdminSection
+                user={user}
                 menuOption={menuOption}
             />
         </Main>

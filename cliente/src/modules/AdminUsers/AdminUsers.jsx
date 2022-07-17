@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import AdminUserCard from '../../modules/AdminUserCard/AdminUserCard'
+import { profilePictureColors } from '../../Share/utilities'
 import Div from '../../components/Div/Div'
 import axios from 'axios'
 
@@ -26,7 +27,10 @@ const AdminUsers = () => {
         <Div className='div--admin-users'>
             {
                 usersList?.map(user => {
-                    return <AdminUserCard user={user} />
+                    return <AdminUserCard 
+                                user={user} 
+                                color={profilePictureColors[Math.floor(Math.random()*profilePictureColors.length)]} 
+                            />
                 })
             }
         </Div>

@@ -8,7 +8,7 @@ const AdminUser = ({name}) => {
         <Div
             className='div--admin-user'
         >
-            <Div className='div--profile-picture'>
+            <Div className='div--profile-picture blue'>
                 <Span
                     className='span--user-initial'
                 >

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {COLORS} from '../../Share/Colors'
-import {userColors} from '../../Share/UserColors'
 
 const Div = styled.div`
 
@@ -796,7 +795,6 @@ const Div = styled.div`
 
     &.div--profile-picture {
         clip-path: circle();
-        background-color: ${userColors.BackgroundBlue};
         padding: 1.25em;
         display: flex;
         justify-content: center;
@@ -804,6 +802,46 @@ const Div = styled.div`
 
         &.usercard {
             padding: 1.65em;
+        }
+
+        &.blue {
+            background-color: rgb(209, 233, 252);
+            color: rgb(6, 27, 100);
+        }
+
+        &.purple {
+            background-color: #f7d9ff;
+            color: #3a004f;  
+        }
+
+        &.green {
+            background-color: #dcffe6;
+            color: #062800;
+        }
+
+        &.yellow {
+            background-color: rgb(255, 247, 205);
+            color: rgb(122, 79, 1);
+        }
+
+        &.pink {
+            background-color: #fae3ef;
+            color: #4b0030;
+        }
+
+        &.red {
+            background-color: #ffdddf;
+            color: #510018;
+        }
+
+        &.orange {
+            background-color: rgb(255, 231, 217);
+            color: rgb(122, 12, 46);
+        }
+
+        &.cyan {
+            background-color: rgb(208, 242, 255);
+            color: rgb(4, 41, 122);
         }
 
     }

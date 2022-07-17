@@ -7,7 +7,7 @@ import Li from '../../components/Li/Li'
 import countapi from 'countapi-js'
 import { FiArrowRight } from 'react-icons/fi'
 
-const AdminHeader = () => {
+const AdminHeader = ({user}) => {
 
     const [views, setViews] = useState('')
     const [hoveredLink, setHoveredLink] = useState(false)
@@ -23,20 +23,23 @@ const AdminHeader = () => {
             admin={true}
         >
             {/* TODO searchbar */}
-            
             <Ul
                 admin={true}
             >
-                <Li
-                    style={{
-                        padding: '10px 20px',
-                        margin: '0 1.5%'
-                    }}
-                >
-                    <VisitorCounter
-                        views={views}
-                    />
-                </Li>
+                {
+                    user?.role === 1 ?
+                    <Li
+                        style={{
+                            padding: '10px 20px',
+                            margin: '0 1.5%'
+                        }}
+                    >
+                        <VisitorCounter
+                            views={views}
+                        />
+                    </Li>
+                    : null
+                }
                 <Li
                     style={{
                         backgroundColor: hoveredLink ? '#e8eef7' : '',

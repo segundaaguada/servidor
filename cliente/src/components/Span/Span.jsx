@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { COLORS } from '../../Share/Colors'
-import { userColors } from '../../Share/UserColors'
 
 const Span = styled.span`
     
@@ -35,7 +34,7 @@ const Span = styled.span`
     
     &.span--user-initial {
         font-size: larger;
-        color: ${userColors.Blue};
+        color: rgb(6, 27, 100);
     }
 
 `

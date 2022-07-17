@@ -3,13 +3,13 @@ import Div from '../../components/Div/Div'
 import Span from '../../components/Span/Span'
 import P from '../../components/P/P'
 
-const AdminUserCard = ({user}) => {
+const AdminUserCard = ({user, color}) => {
     console.log(user)
     return (
         <Div
             className='div--usercard'
         >
-            <Div className='div--profile-picture usercard'>
+            <Div className={`div--profile-picture usercard ${color}`}>
                 {user.name.substring(0, 1)}
             </Div>
             <P className='p--usercard-name'>

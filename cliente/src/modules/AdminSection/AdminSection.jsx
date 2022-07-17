@@ -7,12 +7,14 @@ import { adminSectionTranslations } from '../../Share/utilities'
 import { adminRoutes } from '../../routes/routes'
 
 
-const AdminSection = ({menuOption}) => {
+const AdminSection = ({menuOption, user}) => {
     return (
         <Section
             className='admin-section'
         >
-            <AdminHeader/>
+            <AdminHeader
+                user={user}
+            />
             <Div
                 className='admin-section--div'
             >
