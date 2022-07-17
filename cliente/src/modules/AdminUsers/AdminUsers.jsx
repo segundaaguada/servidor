@@ -15,6 +15,7 @@ const AdminUsers = () => {
     const [page, setPage] = useState(1)
     const [pagesCount, setPagesCount] = useState(0)
     const [lastPageSize, setLastPageSize] = useState(0)
+    const [pictureColors, setPictureColors] = useState([])
 
     const getUsersList = async () => {
         try {
@@ -47,14 +48,24 @@ const AdminUsers = () => {
         getUsersList();
     }, [])
 
+    useEffect(() => {
+        let colors = []
+
+        for (let i=0; i<usersCount; i++) {
+            colors.push(profilePictureColors[Math.floor(Math.random()*profilePictureColors.length)])
+        }
+        
+        setPictureColors(colors)
+    }, [usersCount])
+
     return (
         <>
             <Div className='div--admin-users'>
                 {
-                    usersList?.map(user => {
+                    usersList?.map((user, i) => {
                         return <AdminUserCard 
                                     user={user} 
-                                    color={profilePictureColors[Math.floor(Math.random()*profilePictureColors.length)]} 
+                                    color={pictureColors[i + ((page-1) * limit)]} 
                                 />
                     })
                 }

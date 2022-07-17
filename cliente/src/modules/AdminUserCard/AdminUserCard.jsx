@@ -4,7 +4,6 @@ import Span from '../../components/Span/Span'
 import P from '../../components/P/P'
 
 const AdminUserCard = ({user, color}) => {
-    console.log(user)
     return (
         <Div
             className='div--usercard'
