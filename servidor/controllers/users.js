@@ -9,8 +9,51 @@ const jwt = require('jsonwebtoken')
 
 usersRouter.get('/', async (request, response, next) => {
     try {
-        const users = await User.find({})
-        .populate('association')
+        // const users = await User.find({})
+        // .populate('association')
+
+        const limit = Number(request.query.limit)
+        const skip = Number(request.query.skip)
+
+        const users = await User.aggregate([
+            {
+                $facet: {
+                    'stage1': [{'$group': {_id: null, count: {$sum:1}}}],
+                    'stage2': [
+                        {  
+                            "$skip": skip ? skip : 0
+                        }, 
+                        {
+                            "$limit": limit ? limit : 9
+                        }, 
+                        {
+                            $lookup: {
+                                from: "associations",
+                                localField: "association",
+                                foreignField: "_id",
+                                as: "association"
+                            }
+                        },
+                        {
+                            $unwind: "$association"
+                        },
+                        {
+                            $set: {id: "$_id"}
+                        }
+                    ]
+                }
+            },
+            {
+                $unwind: "$stage1"
+            },
+            {
+                $project: {
+                    count: "$stage1.count",
+                    data: "$stage2"
+                },
+            }
+        ])
+
         response.json(users)
     }
     catch (err) {

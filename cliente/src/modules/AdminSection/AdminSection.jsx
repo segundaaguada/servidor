@@ -18,7 +18,7 @@ const AdminSection = ({menuOption, user}) => {
             <Div
                 className='admin-section--div'
             >
-                <H2>{adminSectionTranslations[menuOption]}</H2>
+                <H2 className='admin-section--heading'>{adminSectionTranslations[menuOption]}</H2>
                 {adminRoutes[menuOption]}
             </Div>
         </Section>

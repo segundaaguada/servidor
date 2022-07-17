@@ -30,6 +30,10 @@ const H2 = styled.h2`
 
     }
 
+    &.admin-section--heading {
+        margin-left: 10px;
+    }
+
 `
 
 export default H2;

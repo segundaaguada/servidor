@@ -152,6 +152,11 @@ const Section = styled.section`
             margin-top: 12vh;
         }
 
+        &.admin {
+            margin-top: 6vh;
+            margin-bottom: 12vh;
+        }
+
     }
 
 
@@ -340,6 +345,7 @@ const Section = styled.section`
     &.admin-section {
         width: 81.5%;
         margin-left: auto;
+        min-height: 100vh;
     }
 
 `
