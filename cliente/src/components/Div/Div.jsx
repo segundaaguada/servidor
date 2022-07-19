@@ -863,8 +863,9 @@ const Div = styled.div`
         flex-direction: column;
         align-items: center;
         transition: transform 0.2s ease;
-        cursor: pointer;
+        // cursor: pointer;
         margin: 20px 25px;
+        position: relative;
 
         &:hover {
             transform: scale(1.05);

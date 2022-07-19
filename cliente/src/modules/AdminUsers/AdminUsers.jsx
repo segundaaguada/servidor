@@ -16,11 +16,13 @@ const AdminUsers = () => {
     const [pagesCount, setPagesCount] = useState(0)
     const [lastPageSize, setLastPageSize] = useState(0)
     const [pictureColors, setPictureColors] = useState([])
+    const [isCheckAll, setIsCheckAll] = useState(false)
+    const [isChecked, setIsChecked] = useState([])
 
     const getUsersList = async () => {
         try {
             const {data} = await axios.get(`api/users?limit=${limit}&skip=0`);
-            const usersList = data[0].data.map( user => {
+            const userList = data[0].data.map( user => {
                 return (
                     {
                         id: user.id,
@@ -33,7 +35,7 @@ const AdminUsers = () => {
                 )
             })
 
-            setUsersList(usersList)
+            setUsersList(userList)
             setPagesCount(Math.ceil(data[0].count / limit))
             setUsersCount(data[0].count)
             setLastPageSize(data[0].count % limit ? data[0].count % limit : limit)
@@ -43,6 +45,25 @@ const AdminUsers = () => {
             console.log(err);
         }
     }
+
+    const handleSelectAll = () => {
+        setIsCheckAll(!isCheckAll);
+        setIsChecked(usersList.map(li => li.id));
+        if (isCheckAll) {
+            setIsChecked([]);
+        }
+    }
+
+    const handleClick = e => {
+        const { id, checked } = e.target;
+        console.log(id, checked)
+        setIsChecked([...isChecked, id]);
+        if (!checked) {
+            setIsChecked(isChecked.filter(item => item !== id));
+        }
+        console.log('uh')
+    }
+    
 
     useEffect(() => {
         getUsersList();
@@ -60,12 +81,17 @@ const AdminUsers = () => {
 
     return (
         <>
+        <button onClick={handleSelectAll}>Select all</button>
+        <div>{isChecked.length} seleccionados</div>
             <Div className='div--admin-users'>
                 {
                     usersList?.map((user, i) => {
                         return <AdminUserCard 
+                                    key={user.id}
                                     user={user} 
-                                    color={pictureColors[i + ((page-1) * limit)]} 
+                                    color={pictureColors[i + ((page-1) * limit)]}
+                                    handleClick={handleClick}
+                                    isChecked={isChecked.includes(user.id)}
                                 />
                     })
                 }
@@ -106,7 +132,7 @@ const AdminUsers = () => {
                                 }
 
                                 const {data} = await axios.get(request);
-                                const usersList = data[0].data.map( user => {
+                                const userList = data[0].data.map( user => {
                                     return (
                                         {
                                             id: user.id,
@@ -119,7 +145,7 @@ const AdminUsers = () => {
                                     )
                                 })
 
-                                setUsersList(usersList)
+                                setUsersList(userList)
                             }}
                         />
                     </Stack> 
