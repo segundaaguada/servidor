@@ -2,7 +2,7 @@ const moongose = require('mongoose');
 const Bussines = require('../models/Bussines')
 const {api, initialBussines, getBussines} =require ('./helpers')
 
-
+//none 
 beforeEach(async ()=>{
     await Bussines.deleteMany({})
     
