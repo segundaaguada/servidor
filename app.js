@@ -11,7 +11,6 @@ const imagesRouter = require ('./controllers/images')
 const associationsRouter = require ('./controllers/associations')
 const notFound = require ('./middleware/notFound')
 
-const dirname = __dirname.slice(0, -6)
 
 
 //Creamos aplicación con express
@@ -20,7 +19,7 @@ app.use(cors())
 app.use(express.json())
 
 
-app.use('/public', express.static(`${dirname}/storage/images`))
+app.use('/public', express.static(`${__dirname}/storage/images`))
 app.use("/api/images", imagesRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/login", loginRouter);
